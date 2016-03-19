@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>change demo</title>
+  <script src="jquery-1.10.2.js"></script>
+</head>
+<body>
+<div id="fjkd">choice example</div>
+ 
+  <select class="target">
+    <option value="option1" >Option 1</option>
+    <option value="option2">Option 2</option>
+  </select>
+<div id="kkk"></div>
+<script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "#kkk" ).text( str );
+  })
+  .change();
+</script>
+ 
+</body>
+</html>
