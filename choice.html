@@ -9,18 +9,20 @@
 <div id="fjkd">choice example</div>
  
   <select class="target">
-    <option value="option1" >Option 1</option>
-    <option value="option2">Option 2</option>
+    <option value="1" >option 1</option>
+    <option value="2">Option 2</option>
   </select>
 <div id="kkk"></div>
+<div id="listes"></div>
 <script>
 $( "select" )
   .change(function () {
-    var str = "";
+    var str = "file.php?wish_id=";
     $( "select option:selected" ).each(function() {
-      str += $( this ).text() + " ";
+      str += $( this ).val() + " ";
     });
     $( "#kkk" ).text( str );
+    $('#listes').load(str).fadeIn('slow');
   })
   .change();
 </script>
